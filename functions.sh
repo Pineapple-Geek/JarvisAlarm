@@ -9,8 +9,6 @@
 
 pg_alarm_main () {
     say "$(pg_jarvis-alarm_lang "alarm_hours" "$1" "$2")" 
-   	RH="$1"
-    RM="$2"
 
     T=1
 
@@ -18,7 +16,7 @@ pg_alarm_main () {
 		H= date +%H
 		M= date +%M
 
-		    if [ "$H" = "$RH" ] && [ "$M" = "$RM" ]
+		    if [ "$H" = "$1" ] && [ "$M" = "$2" ]
 		    then
 			    say "Il est l'heure de se lever!"
 			    T=2
