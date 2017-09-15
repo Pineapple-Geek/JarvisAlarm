@@ -11,13 +11,12 @@ pg_alarm_main () {
     say "$(pg_jarvis-alarm_lang "alarm_hours" "$1" "$2")" 
    	RH="$1"
     RM="$2"
+    H= date +%H
+	M= date +%M
 
     T=1
 
 	while [ 1 -eq $T ];do
-
-		H= date +%H
-		M= date +%M
 
 		    if [ "$H" == "$RH" ] && [ "$M" == "$RM" ]
 		    then
