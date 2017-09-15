@@ -1,1 +1,1 @@
-*ALARM*==say "Test Alarm"
+*ALARM[^ ]+ (*)==pg_alarm_main on "(1)"

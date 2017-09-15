@@ -6,3 +6,11 @@
 # pg for PluGin
 # XX is a short code for your plugin, ex: ww for Weather Wunderground
 # You can use translations provided in the language folders functions.sh
+
+pg_alarm_main () {
+
+	if ["$1" == "on"]; then
+            say "$(pg_jarvis-alarm_lang "the_answer_is" "activer")"
+    fi
+
+}
