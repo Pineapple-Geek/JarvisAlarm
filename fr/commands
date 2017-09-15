@@ -1,1 +1,1 @@
-*ALARM[^ ]+ (*)==pg_alarm_main on
+*ALARM*==pg_alarm_main on
