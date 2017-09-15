@@ -13,10 +13,8 @@ pg_alarm_main () {
     T=1
 
 	while [ 1 -eq $T ];do
-		H= date +%H
-		M= date +%M
-
-		    if [ "$H" = "$1" ] && [ "$M" = "$2" ]
+		
+		    if [ date +%H = "$1" ] && [ date +%M = "$2" ]
 		    then
 			    say "Il est l'heure de se lever!"
 			    T=2
