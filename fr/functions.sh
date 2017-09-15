@@ -15,3 +15,11 @@
 #        the_answer_is) echo "La réponse est $2";;
 #    esac
 #} 
+
+pg_jarvis-alarm_lang () {
+    case "$1" in
+        i_check) echo "Je regarde...";;
+        the_answer_is) echo "La réponse est $2";;
+    esac
+} 
+
