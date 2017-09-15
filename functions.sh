@@ -16,21 +16,13 @@ pg_alarm_main () {
 
 	while [ 1 -eq $T ];do
 
-	    DAY=`date`
-
-	    set -- $DAY
-	    TODAY=$1
-
-	    HDATE=`date`
-	    set -- $HDATE
-	    HHOUR=$5
-
-	    H=`echo $HHOUR | awk -F : '{print $1}'`
-	    M=`echo $HHOUR | awk -F : '{print $2}'`
+		H= date +%H
+		M= date +%M
 
 		    if [ "$H" == "$RH" ] && [ "$M" == "$RM" ]
 		    then
 			    say "Il est l'heure de se lever!"
+			    T=2
 		    fi
 
 	done
