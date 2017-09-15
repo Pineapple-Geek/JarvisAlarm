@@ -30,12 +30,7 @@ pg_alarm_main () {
 
 		    if [ "$H" == "$RH" ] && [ "$M" == "$RM" ]
 		    then
-			    echo REVEIL
-		    fi
-
-		    if [ $M -ne $RM ]
-		    then
-			    T=2
+			    say "Il est l'heure de se lever!"
 		    fi
 
 	done

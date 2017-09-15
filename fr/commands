@@ -1,1 +1,2 @@
+*TIME*==say "il est $([ $pg_time_format -eq 12 ] && date +"%l" || date +"%k") h$([ "$tts_engine" = "google" ] || echo "eures" ) $([ $(date +"%-M") -eq 0 ] || date +"%-M")"
 *ALARM (*) HEURE (*)==pg_alarm_main "(1)" "(2)"
