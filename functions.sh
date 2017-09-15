@@ -9,6 +9,6 @@
 
 pg_alarm_main () {
 
-    say "$(pg_jarvis-alarm_lang "the_answer_is" "activer")"
+    say "$(pg_jarvis-alarm_lang "the_answer_is" "$1")"
 
 }

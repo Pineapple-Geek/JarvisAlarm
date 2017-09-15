@@ -19,7 +19,7 @@
 pg_jarvis-alarm_lang () {
     case "$1" in
         i_check) echo "Je regarde...";;
-        the_answer_is) echo "L'alarm est $2";;
+        the_answer_is) echo "L'alarm est programmer pour $2";;
     esac
 } 
 
