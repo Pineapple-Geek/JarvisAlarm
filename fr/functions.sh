@@ -18,8 +18,7 @@
 
 pg_jarvis-alarm_lang () {
     case "$1" in
-        i_check) echo "Je regarde...";;
-        the_answer_is) echo "L'alarme est programmer pour $2";;
+        alarm_hours) echo "L'alarme est programmer pour $2 heures $3";;
     esac
 } 
 

@@ -8,9 +8,7 @@
 # You can use translations provided in the language folders functions.sh
 
 pg_alarm_main () {
-
-    say "$(pg_jarvis-alarm_lang "the_answer_is" "$1")"
-    RH="$1" | cut -d "h" -f 1
-    RM="$1" | cut -d "h" -f 2
-    say $RH "heures" $RM
+	RH="$1"
+    RM="$2"
+    say "$(pg_jarvis-alarm_lang "alarm_hours" "$1" "$2")" 
 }
