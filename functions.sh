@@ -12,5 +12,5 @@ pg_alarm_main () {
     say "$(pg_jarvis-alarm_lang "the_answer_is" "$1")"
     RH="$1" | cut -d "h" -f 1
     RM="$1" | cut -d "h" -f 2
-    say "$RH heures $RM"
+    say $RH "heures" $RM
 }
