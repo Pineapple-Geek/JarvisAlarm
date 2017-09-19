@@ -30,6 +30,12 @@ sleep $sec_until
 
 time_h=$(date +%H)
 time_m=$(date +%M)
+
+if [ $wake_music != "null" ]
+then
+   mpg321 $wake_music
+fi
+
 say "Réveillez vous il es $time_h:$time_m"
 }
 
@@ -63,5 +69,11 @@ sleep $sec_until
 
 time_h=$(date +%H)
 time_m=$(date +%M)
+
+if [ $wake_music != "null" ]
+then
+   mpg321 $wake_music
+fi
+
 say "Wake up it $time_h:$time_m"
 }
