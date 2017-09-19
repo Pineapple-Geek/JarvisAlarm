@@ -17,11 +17,9 @@ target_s_t=$(($target_h + $target_m))
 
 # get current time and convert to seconds
 clock_h="date +%H"
-clock_h_s=$(($clock_h * 60 * 60))
 clock_m="date +%M"
-clock_m_s=$(($clock_m * 60))
 clock_s="date +%S"
-clock_s_t=$(($clock_h_s + $clock_m_s + $clock_s))
+clock_s_t=`dc -e "$clock_h 60 60 ** $clock_m 60 * $clock_s ++p"
 
 # calculate difference in times, add number of sec. in day and mod by same
 sec_until=`dc -e "24 60 60 **d $target_s_t $clock_s_t -+r%p"`
