@@ -16,9 +16,9 @@
 #    esac
 #} 
 
-pg_jarvis-alarm_lang () {
+pg_jarvis-alarm_fr () {
     case "$1" in
-        alarm_hours) echo "L'alarme est programmer pour $2 heures $3";;
+        alarm_hours) echo "L'alarme est programmé pour $2 heures $3";;
     esac
 } 
 
