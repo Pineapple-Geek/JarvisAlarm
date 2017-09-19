@@ -1,18 +1,18 @@
 ## Description
-Français : Alarme pour Jarvis encore en cour de développement.
-Anglais : Alarm for Jarvis still under development.
+* FranÃ§ais : Alarme pour Jarvis encore en cour de dÃ©veloppement.
+* Anglais : Alarm for Jarvis still under development.
 
 # Utilisation / Usage
 
-Français:
+FranÃ§ais:
 ```
 You: Mets l'alarme pour 06 heures 30
-Jarvis: L'alarme est programmé pour 06 heures 30
+Jarvis: L'alarme est programmÃ© pour 06 heures 30
 ```
 Anglais:
 ```
 You: Mets l'alarme pour 06 heures 30
-Jarvis: L'alarme est programmé pour 06 heures 30
+Jarvis: L'alarme est programmÃ© pour 06 heures 30
 ```
 
 ## Auteur / Author
