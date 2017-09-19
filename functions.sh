@@ -11,21 +11,24 @@ pg_alarm_main () {
 say "$(pg_jarvis-alarm_lang "alarm_hours" "$1" "$2")" 
 
 # convert wakeup time to seconds
-target_h="$1"
-target_m="$2"
-target_s_t=`dc -e "$target_h 60 60 ** $target_m 60 *+p"`
+target_h=$(($1 * 60 * 60))
+target_m=$(($2 * 60))
+target_s_t=$(($target_h + $target_m))
 
 # get current time and convert to seconds
-clock=`date | awk '{print $4}'`
-clock_h=`echo $clock | awk -F: '{print $1}'`
-clock_m=`echo $clock | awk -F: '{print $2}'`
-clock_s=`echo $clock | awk -F: '{print $3}'`
-clock_s_t=`dc -e "$clock_h 60 60 ** $clock_m 60 * $clock_s ++p"`
+clock_h="date +%H"
+clock_h_s=$(($clock_h * 60 * 60))
+clock_m="date +%M"
+clock_m_s=$(($clock_m * 60))
+clock_s="date +%S"
+clock_s_t=$(($clock_h_s + $clock_m_s + $clock_s))
 
 # calculate difference in times, add number of sec. in day and mod by same
 sec_until=`dc -e "24 60 60 **d $target_s_t $clock_s_t -+r%p"`
 
-say "L'alarme disparaîtra à $target."
+say "L'alarme disparaîtra à $1 heure $2."
 
 sleep $sec_until
+
+say "Wake Up."
 }
