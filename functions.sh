@@ -21,12 +21,12 @@ clock_m=$(date +%M)
 clock_s=$(date +%S)
 clock_s_t=`dc -e "$clock_h 60 60 ** $clock_m 60 * $clock_s ++p"`
 
-# calculate difference in times, add number of sec. in day and mod by same
-# sec_until=`dc -e "24 60 60 **d $target_s_t $clock_s_t -+r%p"`
+calculate difference in times, add number of sec. in day and mod by same
+sec_until=`dc -e "24 60 60 **d $target_s_t $clock_s_t -+r%p"`
 
-# say "L'alarme disparaîtra à $1 heure $2."
+say "L'alarme disparaîtra à $1 heure $2."
 
-# sleep $sec_until
+sleep $sec_until
 
-say "Wake Up (date +%H:%M:%S)."
+say "Wake Up"
 }
