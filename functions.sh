@@ -63,7 +63,7 @@ clock_s_t=`dc -e "$clock_h 60 60 ** $clock_m 60 * $clock_s ++p"`
 # calculate difference in times, add number of sec. in day and mod by same
 sec_until=`dc -e "24 60 60 **d $target_s_t $clock_s_t -+r%p"`
 
-say "Please wait for the alarm to end."
+say "Please wait for the alarm to give other instructions."
 
 sleep $sec_until
 
@@ -75,5 +75,5 @@ then
    mpg321 $wake_music
 fi
 
-say "Wake up it $time_h:$time_m"
+say "Wake up it's $time_h:$time_m"
 }

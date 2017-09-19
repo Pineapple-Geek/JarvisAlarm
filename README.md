@@ -1,22 +1,19 @@
-<!---
-IMPORTANT
-=========
-This README.md is displayed in the WebStore as well as within Jarvis app
-Please do not change the structure of this file
-Fill-in Description, Usage & Author sections
-Make sure to rename the [en] folder into the language code your plugin is written in (ex: fr, es, de, it...)
-For multi-language plugin:
-- clone the language directory and translate commands/functions.sh
-- optionally write the Description / Usage sections in several languages
--->
 ## Description
-Description of your Plugin
+Français : Alarme pour Jarvis encore en cour de développement.
+Anglais : Alarm for Jarvis still under development.
 
-## Usage
+# Utilisation / Usage
+
+Français:
 ```
-You: example of how to trigger the command
-Jarvis: output from Jarvis
+You: Mets l'alarme pour 06 heures 30
+Jarvis: L'alarme est programmé pour 06 heures 30
+```
+Anglais:
+```
+You: Mets l'alarme pour 06 heures 30
+Jarvis: L'alarme est programmé pour 06 heures 30
 ```
 
-## Author
-[your name](http://your.website)
+## Auteur / Author
+[Pineapple-Geek](https://www.facebook.com/Pineapple.Geek)
