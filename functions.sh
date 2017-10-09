@@ -33,7 +33,8 @@ time_m=$(date +%M)
 
 if [ $wake_music != "null" ]
 then
-   mpg321 $wake_music
+   pwd
+   play $wake_music
 fi
 
 say "Réveillez vous il es $time_h:$time_m"
