@@ -33,7 +33,6 @@ time_m=$(date +%M)
 
 if [ $wake_music != "null" ]
 then
-   pwd
    play $wake_music
 fi
 
