@@ -11,7 +11,7 @@ pg_alarm_main_fr () {
 say "$(pg_jarvis-alarm_fr "alarm_hours" "$1" "$2")" 
 
 # convert wakeup time to seconds
-target_h=$(($1 * 60 * 60))
+target_h=$(($1 * 3600))
 target_m=$(($2 * 60))
 target_s_t=$(($target_h + $target_m))
 
