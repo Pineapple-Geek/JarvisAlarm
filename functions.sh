@@ -11,8 +11,8 @@ pg_alarm_main_fr () {
 say "$(pg_jarvis-alarm_fr "alarm_hours" "$1" "$2")" 
 
 # convert wakeup time to seconds
-target_h=$($1)
-target_m=$($2)
+target_h="$1"
+target_m="$2"
 target_s_t=`dc -e "$target_h 60 60 ** $target_m 60 ++p"`
 
 # get current time and convert to seconds
