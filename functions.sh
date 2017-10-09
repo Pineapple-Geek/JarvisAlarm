@@ -36,7 +36,7 @@ then
    play $wake_music
 fi
 
-say "Réveillez vous il es $time_h:$time_m"
+say "Réveillez vous il es $time_h heures $time_m"
 }
 
 # ---------------------------------------------------------------------------------------------------------
