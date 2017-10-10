@@ -18,9 +18,7 @@ else
 	Jour="Today"
 fi
 
-DateTime="$1:$2 $Jour"
-
-date=DateTime
+date="$1:$2 $Jour"
 
 say "L'alarme est programmé pour le $(date --date="$date")."
 say "Veuillez attendre la fin de l'alarme pour donner d'autre instructions."
