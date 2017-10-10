@@ -8,28 +8,23 @@
 # You can use translations provided in the language folders functions.sh
 
 pg_alarm_main_fr () {
-say "$(pg_jarvis-alarm_fr "alarm_hours" "$1" "$2")" 
+#say "$(pg_jarvis-alarm_fr "alarm_hours" "$1" "$2")" 
+Jour=""
 
-# convert wakeup time to seconds
-target_h="$1"
-target_m="$2"
-clock_s_t=`dc -e "$target_h 60 60 ** $target_m 60 ++p"`
+if [ $3 == "Demain" ]
+then 
+	Jour="Tomorrow"
+else
+	Jour="Today"
+fi
 
-# get current time and convert to seconds
-clock_h=$(date +%H)
-clock_m=$(date +%M)
-clock_s=$(date +%S)
-clock_s_t=`dc -e "$clock_h 60 60 ** $clock_m 60 * $clock_s ++p"`
+DateTime="$1:$2 $Jour"
 
-# calculate difference in times, add number of sec. in day and mod by same
-sec_until=`dc -e "24 60 60 **d $target_s_t $clock_s_t -+r%p"`
+date=DateTime
 
+say "L'alarme est programmé pour le $(date --date="$date")."
 say "Veuillez attendre la fin de l'alarme pour donner d'autre instructions."
-
-sleep $sec_until
-
-time_h=$(date +%H)
-time_m=$(date +%M)
+sleep $(( $(date --date="$date" +%s) - $(date +%s) ));
 
 if [ $wake_music != "null" ]
 then
