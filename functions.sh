@@ -13,9 +13,7 @@ say "$(pg_jarvis-alarm_fr "alarm_hours" "$1" "$2")"
 # convert wakeup time to seconds
 target_h="$1"
 target_m="$2"
-let "target_H = target_h * 3600"
-let "target_M = target_m * 3600"
-target_s_t=$(($target_H + $target_M))
+clock_s_t=`dc -e "$target_h 60 60 ** $target_m 60 ++p"`
 
 # get current time and convert to seconds
 clock_h=$(date +%H)
