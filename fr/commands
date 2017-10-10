@@ -1,1 +1,2 @@
-*ALARME (*)H (*)MINUTES(*)==pg_alarm_main_fr "(1)" "(2)" "(3)"
+*ALARME (*)H (*)MINUTES==pg_alarm_main_fr "(1)" "(2)"
+*REVEIL (*)H (*)MINUTES==pg_reveil_main_fr "(1)" "(2)"

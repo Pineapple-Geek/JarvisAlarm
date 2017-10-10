@@ -9,16 +9,8 @@
 
 pg_alarm_main_fr () {
 #say "$(pg_jarvis-alarm_fr "alarm_hours" "$1" "$2")" 
-Jour=""
 
-if [ $3 == "Demain" ]
-then 
-	Jour="Tomorrow"
-else
-	Jour="Today"
-fi
-
-date="$1:$2 $Jour"
+date="$1:$2 Today"
 
 say "L'alarme est programmé pour le $(date --date="$date")."
 say "Veuillez attendre la fin de l'alarme pour donner d'autre instructions."
@@ -29,7 +21,24 @@ then
    play $wake_music
 fi
 
-say "Réveillez-vous il es $time_h heures $time_m"
+say "Il es $1 heures $2"
+}
+
+pg_reveil_main_fr () {
+#say "$(pg_jarvis-alarm_fr "alarm_hours" "$1" "$2")" 
+
+date="$1:$2 Tomorrow"
+
+say "L'alarme est programmé pour le $(date --date="$date")."
+say "Veuillez attendre la fin de l'alarme pour donner d'autre instructions."
+sleep $(( $(date --date="$date" +%s) - $(date +%s) ));
+
+if [ $wake_music != "null" ]
+then
+   play $wake_music
+fi
+
+say "Réveillez-vous il es $1 heures $2"
 }
 
 # ---------------------------------------------------------------------------------------------------------
