@@ -16,7 +16,7 @@ target_m="$2"
 
 say "Veuillez attendre la fin de l'alarme pour donner d'autre instructions."
 
-at target_h:target_m
+at target_h:target_m PM
 
 time_h=$(date +%H)
 time_m=$(date +%M)
