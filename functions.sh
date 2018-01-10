@@ -13,10 +13,11 @@ say "$(pg_jarvis-alarm_fr "alarm_hours" "$1" "$2")"
 say "Veuillez attendre la fin de l'alarme pour donner d'autre instructions."
 
 target=$1$2
+workFolder=$(readlink -f $(dirname $0))
 
 
-# say "Alarme $target_h:$target_m $target_t"
-at -m target < say "Alarme $target_h:$target_m $target_t"
+say "$workFolder"
+# at target -f 
 
 # time_h=$(date +%H)
 # time_m=$(date +%M)
