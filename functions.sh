@@ -19,7 +19,9 @@ JarvisFolder=$workFolder$JarvisCommand
 
 
 # say "$JarvisFolder"
+atrm $(atq | cut -f1)
 at $target < $JarvisFolder
+at -l
 
 # time_h=$(date +%H)
 # time_m=$(date +%M)
