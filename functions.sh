@@ -19,7 +19,7 @@ JarvisFolder=$workFolder$JarvisCommand
 
 
 # say "$JarvisFolder"
-atrm $(atq | cut -f1)
+for i in $(atq | cut -f 1); do atrm $i; done
 at $target < $JarvisFolder
 at -l
 
