@@ -30,7 +30,9 @@ if [[ $1 > "12" ]]; then
 	target_t="PM"
 fi
 
-at target_h:target_m target_t
+say "Alarme $target_h:$target_m $target_t"
+
+# at target_h:target_m target_t
 
 time_h=$(date +%H)
 time_m=$(date +%M)
