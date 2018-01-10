@@ -32,7 +32,7 @@ fi
 
 # say "Alarme $target_h:$target_m $target_t"
 
-at target_h:target_m target_t -t
+at target_h:target_m target_t > say "Alarme $target_h:$target_m $target_t"
 
 time_h=$(date +%H)
 time_m=$(date +%M)
