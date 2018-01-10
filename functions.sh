@@ -18,8 +18,8 @@ JarvisCommand="/plugins_installed/jarvis-alarm-test/command.txt"
 JarvisFolder=$workFolder$JarvisCommand
 
 
-say "$JarvisFolder"
-# at target -f 
+# say "$JarvisFolder"
+at target -f $JarvisFolder
 
 # time_h=$(date +%H)
 # time_m=$(date +%M)
