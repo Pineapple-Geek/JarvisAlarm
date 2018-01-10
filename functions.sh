@@ -14,12 +14,12 @@ say "Veuillez attendre la fin de l'alarme pour donner d'autre instructions."
 
 target=$1$2
 workFolder=$(readlink -f $(dirname $0))
-JarvisCommand="/plugins_installed/jarvis-alarm-test/command.txt"
+JarvisCommand="/plugins_installed/jarvis-alarm-test/command.sh"
 JarvisFolder=$workFolder$JarvisCommand
 
 
 # say "$JarvisFolder"
-at -m $target < $JarvisFolder
+at $target < $JarvisFolder
 
 # time_h=$(date +%H)
 # time_m=$(date +%M)
