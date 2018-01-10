@@ -12,10 +12,26 @@ say "$(pg_jarvis-alarm_fr "alarm_hours" "$1" "$2")"
 
 say "Veuillez attendre la fin de l'alarme pour donner d'autre instructions."
 
-target =$('date --date="$1:$2:00" +%T')
-target_h=$(target +%H)
-target_m=$(target +%M)
-target_t=$(target +%P)
+if [ $1 < "12" ]
+{
+	target_h= "$1"
+	target_m= "$2"
+	target_t= "AM"
+}
+
+if [ $1 = "12" ]
+{
+	target_h= "1"
+	target_m= "$2"
+	target_t= "PM"
+}
+
+if [ $1 > "12" ]
+{
+	target_h=$(($1 - 12))
+	target_m= "$2"
+	target_t= "PM"
+}
 
 at target_h:target_m target_t
 
