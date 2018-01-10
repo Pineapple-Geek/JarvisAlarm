@@ -32,12 +32,14 @@ fi
 
 # say "Alarme $target_h:$target_m $target_t"
 
-at target_h:target_m target_t > say "Alarme $target_h:$target_m $target_t"
+at target_h:target_m target_t 
+at> say "Alarme $target_h:$target_m $target_t"
+at> <EOT>
 
-time_h=$(date +%H)
-time_m=$(date +%M)
+# time_h=$(date +%H)
+# time_m=$(date +%M)
 
-say "Réveillez-vous il es $time_h heures $time_m"
+# say "Réveillez-vous il es $time_h heures $time_m"
 }
 
 # ---------------------------------------------------------------------------------------------------------
