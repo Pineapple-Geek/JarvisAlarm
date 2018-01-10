@@ -1,4 +1,1 @@
-if [ $wake_music != "null" ]
-then
-   mpg321 $wake_music
-fi
+mpg321 plugins_installed/jarvis-alarm-test/audio/melodie.mp3
