@@ -10,13 +10,9 @@
 pg_alarm_main_fr () {
 say "$(pg_jarvis-alarm_fr "alarm_hours" "$1" "$2")" 
 
-# convert wakeup time to seconds
-target_h="$1"
-target_m="$2"
-
 say "Veuillez attendre la fin de l'alarme pour donner d'autre instructions."
 
-at target_h:target_m PM
+at "$1":"$2" PM
 
 time_h=$(date +%H)
 time_m=$(date +%M)
