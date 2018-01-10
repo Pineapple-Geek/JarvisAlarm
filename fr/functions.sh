@@ -15,10 +15,3 @@
 #        the_answer_is) echo "La réponse est $2";;
 #    esac
 #} 
-
-pg_jarvis-alarm_fr () {
-    case "$1" in
-        alarm_hours) echo "L'alarme est programmé pour $2 heures $3 minutes";;
-    esac
-} 
-
