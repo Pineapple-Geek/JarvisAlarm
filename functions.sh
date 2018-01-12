@@ -54,7 +54,7 @@ workFolder=$(readlink -f $(dirname $0))
 JarvisCommand="/plugins_installed/jarvis-alarm-test/command.sh"
 JarvisFolder=$workFolder$JarvisCommand
 
-if [[ $DayTime = "Today"]]; then
+if [ $DayTime = "Today"] then
 	at $target < $JarvisFolder
 	at -l
 else
