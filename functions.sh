@@ -8,25 +8,56 @@
 # You can use translations provided in the language folders functions.sh
 
 pg_alarm_main_fr () {
-say "$(pg_jarvis-alarm_fr "alarm_hours" "$1" "$2")" 
+say "$(pg_jarvis-alarm_fr "alarm_hours" "$1" "$2" "$3")" 
 
-say "Veuillez attendre la fin de l'alarme pour donner d'autre instructions."
+if [[ $3 = "aujourd'hui"]]; then
+	DayTime="Today"
+fi
+
+if [[ $3 = "demain"]]; then
+	DayTime="tomorrow"
+fi
+
+if [[ $3 = "lundi"]]; then
+	DayTime="Mon"
+fi
+
+if [[ $3 = "mardi"]]; then
+	DayTime="Tue"
+fi
+
+if [[ $3 = "mercredi"]]; then
+	DayTime="Wed"
+fi
+
+if [[ $3 = "jeudi"]]; then
+	DayTime="Thu"
+fi
+
+if [[ $3 = "vendredi"]]; then
+	DayTime="Fri"
+fi
+
+if [[ $3 = "samedi"]]; then
+	DayTime="Sat"
+fi
+
+if [[ $3 = "dimanche"]]; then
+	DayTime="Sun"
+fi
+
 
 target=$1$2
 workFolder=$(readlink -f $(dirname $0))
 JarvisCommand="/plugins_installed/jarvis-alarm-test/command.sh"
 JarvisFolder=$workFolder$JarvisCommand
-
-
-# say "$JarvisFolder"
-for i in $(atq | cut -f 1); do atrm $i; done
-at $target < $JarvisFolder
-at -l
-
-# time_h=$(date +%H)
-# time_m=$(date +%M)
-
-# say "Réveillez-vous il es $time_h heures $time_m"
+if [[ $DayTime = "Today"]]; then
+	at $target < $JarvisFolder
+	at -l
+else
+	at $target $DayTime < $JarvisFolder
+	at -l
+fi
 }
 
 # ---------------------------------------------------------------------------------------------------------
@@ -37,33 +68,13 @@ at -l
 # ---------------------------------------------------------------------------------------------------------
 
 pg_alarm_main_en () {
-say "$(pg_jarvis-alarm_en "alarm_hours" "$1" "$2")" 
+say "$(pg_jarvis-alarm_fr "alarm_hours" "$1" "$2" "$3")" 
 
-# convert wakeup time to seconds
-target_h=$(($1*3600))
-target_m=$(($2*60))
-target_s_t=$(($target_h + $target_m))
+target=$1$2
+workFolder=$(readlink -f $(dirname $0))
+JarvisCommand="/plugins_installed/jarvis-alarm-test/command.sh"
+JarvisFolder=$workFolder$JarvisCommand
 
-# get current time and convert to seconds
-clock_h=$(date +%H)
-clock_m=$(date +%M)
-clock_s=$(date +%S)
-clock_s_t=`dc -e "$clock_h 60 60 ** $clock_m 60 * $clock_s ++p"`
-
-# calculate difference in times, add number of sec. in day and mod by same
-sec_until=`dc -e "24 60 60 **d $target_s_t $clock_s_t -+r%p"`
-
-say "Please wait for the alarm to give other instructions."
-
-sleep $sec_until
-
-time_h=$(date +%H)
-time_m=$(date +%M)
-
-if [ $wake_music != "null" ]
-then
-   mpg321 $wake_music
-fi
-
-say "Wake up it's $time_h hours $time_m"
+at $target < $JarvisFolder
+at -l
 }
