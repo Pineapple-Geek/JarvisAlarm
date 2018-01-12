@@ -12,39 +12,39 @@ say "$(pg_jarvis-alarm_fr "alarm_hours" "$1" "$2" "$3")"
 
 DayTarget=$3
 
-if [ $DayTarget -eq "aujourd'hui"]; then
+if [[ $DayTarget -eq "aujourd'hui"]]; then
 	DayTime="Today"
 fi
 
-if [ $DayTarget -eq "demain"]; then
+if [[ $DayTarget -eq "demain"]]; then
 	DayTime="tomorrow"
 fi
 
-if [ $DayTarget -eq "lundi"]; then
+if [[ $DayTarget -eq "lundi"]]; then
 	DayTime="Mon"
 fi
 
-if [ $DayTarget -eq "mardi"]; then
+if [[ $DayTarget -eq "mardi"]]; then
 	DayTime="Tue"
 fi
 
-if [ $DayTarget -eq "mercredi"]; then
+if [[ $DayTarget -eq "mercredi"]]; then
 	DayTime="Wed"
 fi
 
-if [ $DayTarget -eq "jeudi"]; then
+if [[ $DayTarget -eq "jeudi"]]; then
 	DayTime="Thu"
 fi
 
-if [ $DayTarget -eq "vendredi"]; then
+if [[ $DayTarget -eq "vendredi"]]; then
 	DayTime="Fri"
 fi
 
-if [ $DayTarget -eq "samedi"]; then
+if [[ $DayTarget -eq "samedi"]]; then
 	DayTime="Sat"
 fi
 
-if [ $DayTarget -eq "dimanche"]; then
+if [[ $DayTarget -eq "dimanche"]]; then
 	DayTime="Sun"
 fi
 
