@@ -6,7 +6,7 @@
 
 Français:
 ```
-You: Mets l'alarme pour 06 heures 30 minutes demain
+You: Mets une alarme pour 06 heures 30 minutes demain
 Jarvis: L'alarme est programmé pour 06 heures 30 minutes demain
 job X at (date et heure de l'alarme)
 ...
