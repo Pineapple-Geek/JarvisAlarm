@@ -22,7 +22,7 @@ job X at (date and time of the alarm)
 Launch control store in the file command.sh
 
 ```
-Commande de Jour Disponible
+Commande de Jour Disponible:
 ```
 
 Aujourd'hui / Today
