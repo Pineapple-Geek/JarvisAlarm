@@ -96,13 +96,80 @@ say "$(pg_jarvis-alarmremove_fr "alarm_remove")"
 # ---------------------------------------------------------------------------------------------------------
 
 pg_alarm_main_en () {
-say "$(pg_jarvis-alarm_fr "alarm_hours" "$1" "$2" "$3")" 
+say "$(pg_jarvis-alarm_en "alarm_hours" "$1" "$2" "$3")" 
+DayTarget=$3
+DayToday="today"
+DayTomorrow="tomorrow"
+DayMonday="monday"
+DayTuesday="tuesday"
+DayWednesday="wednesday"
+DayThursday="thursday"
+DayFriday="friday"
+DaySaturday="saturday"
+DaySunday="sunday"
+
+if [ $DayTarget = $DayToday ]
+then
+DayTime="Today"
+fi
+
+if [ $DayTarget = $DayTomorrow ]
+then
+DayTime="tomorrow"
+fi
+
+if [ $DayTarget = $DayMonday ]
+then
+DayTime="Mon"
+fi
+
+if [ $DayTarget = $DayTuesday ]
+then
+DayTime="Tue"
+fi
+
+if [ $DayTarget = $DayWednesday ]
+then
+DayTime="Wed"
+fi
+
+if [ $DayTarget = $DayThursday ]
+then
+DayTime="Thu"
+fi
+
+if [ $DayTarget = $DayFriday ]
+then
+DayTime="Fri"
+fi
+
+if [ $DayTarget = $DaySaturday ]
+then
+DayTime="Sat"
+fi
+
+if [ $DayTarget = $DaySunday ]
+then
+DayTime="Sun"
+fi
+
 
 target=$1$2
 workFolder=$(readlink -f $(dirname $0))
 JarvisCommand="/plugins_installed/jarvis-alarm-test/command.sh"
 JarvisFolder=$workFolder$JarvisCommand
 
-at $target < $JarvisFolder
-at -l
+if [ $DayTarget = $DayToday ]
+then
+	at $target < $JarvisFolder
+	at -l
+else
+	at $target $DayTime < $JarvisFolder
+	at -l
+fi
+}
+
+pg_alarm_remove_en () {
+for i in `atq | awk '{ }'`;do atrm $i;done
+say "$(pg_jarvis-alarmremove_en "alarm_remove")" 
 }
