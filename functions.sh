@@ -12,11 +12,11 @@ say "$(pg_jarvis-alarm_fr "alarm_hours" "$1" "$2" "$3")"
 
 DayTarget=$3
 
-if [ $DayTarget == "aujourd'hui"]; then
+if [[ $DayTarget == "aujourd'hui"]]; then
 	DayTime="Today"
 fi
 
-if [ $DayTarget == "demain"]; then
+if [[ $DayTarget == "demain"]]; then
 	DayTime="tomorrow"
 fi
 
