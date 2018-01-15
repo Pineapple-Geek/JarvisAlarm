@@ -13,18 +13,57 @@ say "$(pg_jarvis-alarm_fr "alarm_hours" "$1" "$2" "$3")"
 DayTarget=$3
 DayToday="aujourd'hui"
 DayTomorrow="demain"
+DayMonday="lundi"
+DayTuesday="mardi"
+DayWednesday="mercredi"
+DayThursday="jeudi"
+DayFriday="vendredi"
+DaySaturday="samedi"
+DaySunday="dimanche"
+
+if [ $DayTarget = $DayToday ]
+then
+DayTime="Today"
+fi
 
 if [ $DayTarget = $DayTomorrow ]
 then
-say "Test Réussi" 
+DayTime="tomorrow"
 fi
 
-if [$DayTarget = $DayToday]; then
-	DayTime="Today"
+if [ $DayTarget = $DayMonday ]
+then
+DayTime="Mon"
 fi
 
-if [$DayTarget = $DayTomorrow]; then
-	DayTime="tomorrow"
+if [ $DayTarget = $DayTuesday ]
+then
+DayTime="Tue"
+fi
+
+if [ $DayTarget = $DayWednesday ]
+then
+DayTime="Wed"
+fi
+
+if [ $DayTarget = $DayThursday ]
+then
+DayTime="Thu"
+fi
+
+if [ $DayTarget = $DayFriday ]
+then
+DayTime="Fri"
+fi
+
+if [ $DayTarget = $DaySaturday ]
+then
+DayTime="Sat"
+fi
+
+if [ $DayTarget = $DaySunday ]
+then
+DayTime="Sun"
 fi
 
 
@@ -33,7 +72,8 @@ workFolder=$(readlink -f $(dirname $0))
 JarvisCommand="/plugins_installed/jarvis-alarm-test/command.sh"
 JarvisFolder=$workFolder$JarvisCommand
 
-if $DayTarget == "Today"; then
+if [ $DayTarget = $DayToday ]
+then
 	at $target < $JarvisFolder
 	at -l
 else
