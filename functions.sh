@@ -14,6 +14,11 @@ DayTarget=$3
 DayToday="aujourd'hui"
 DayTomorrow="demain"
 
+if [ $DayTarget = $DayTomorrow ]
+then
+say "Test Réussi" 
+fi
+
 if [$DayTarget = $DayToday]; then
 	DayTime="Today"
 fi
