@@ -68,7 +68,9 @@ fi
 
 
 target=$1$2
-JarvisFolder="/plugins_installed/jarvis-alarm-test/command.sh"
+workFolder=$(readlink -f $(dirname $0))
+JarvisCommand="/plugins_installed/jarvis-alarm-test/command.sh"
+JarvisFolder=$workFolder$JarvisCommand
 
 if [ $DayTarget = $DayToday ]
 then
@@ -153,7 +155,9 @@ fi
 
 
 target=$1$2
-JarvisFolder="/plugins_installed/jarvis-alarm-test/command.sh"
+workFolder=$(readlink -f $(dirname $0))
+JarvisCommand="/plugins_installed/jarvis-alarm-test/command.sh"
+JarvisFolder=$workFolder$JarvisCommand
 
 if [ $DayTarget = $DayToday ]
 then
