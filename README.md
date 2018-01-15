@@ -6,19 +6,35 @@
 
 Français:
 ```
-You: Mets l'alarme pour 06 heures 30 minutes
-Jarvis: L'alarme est programmé pour 06 heures 30 minutes
-Jarvis: Veuillez attendre la fin de l'alarme pour donner d'autre instructions.
+You: Mets l'alarme pour 06 heures 30 minutes demain
+Jarvis: L'alarme est programmé pour 06 heures 30 minutes demain
+job X at (date et heure de l'alarme)
 ...
-Jarvis: Réveillez-vous il es 06 heures 30
+Lancement des commande stocker dans le fichier command.sh
+
 ```
 Anglais:
 ```
-You: Set the alarm for 06 hours 30 minutes
-Jarvis: The alarm is programmed for 06 hours 30 minutes
-Jarvis: Please wait for the alarm to give other instructions..
+You: Set the alarm for 06 hours 30 minutes tomorrow
+Jarvis: The alarm is programmed for 06 hours 30 minutes tomorrow
+job X at (date and time of the alarm)
 ...
-Jarvis: Wake up it's 06 hours 30
+Launch control store in the file command.sh
+
+```
+Commande de Jour Disponible
+```
+
+Aujourd'hui / Today
+Demain / Tomorrow
+Lundi / Monday
+Mardi / Tuesday
+Mercredi / Wednesday
+Jeudi / Thursday
+Vendredi / Friday
+Samedi / Sathurday
+Dimanche / Sunday
+
 ```
 
 ## Auteur / Author
