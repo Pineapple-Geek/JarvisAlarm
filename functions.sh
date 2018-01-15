@@ -22,34 +22,6 @@ if [$DayTarget = $DayTomorrow]; then
 	DayTime="tomorrow"
 fi
 
-if [ $DayTarget == "lundi"]; then
-	DayTime="Mon"
-fi
-
-if [ $DayTarget == "mardi"]; then
-	DayTime="Tue"
-fi
-
-if [ $DayTarget == "mercredi"]; then
-	DayTime="Wed"
-fi
-
-if [ $DayTarget == "jeudi"]; then
-	DayTime="Thu"
-fi
-
-if [ $DayTarget == "vendredi"]; then
-	DayTime="Fri"
-fi
-
-if [ $DayTarget == "samedi"]; then
-	DayTime="Sat"
-fi
-
-if [ $DayTarget == "dimanche"]; then
-	DayTime="Sun"
-fi
-
 
 target=$1$2
 workFolder=$(readlink -f $(dirname $0))
