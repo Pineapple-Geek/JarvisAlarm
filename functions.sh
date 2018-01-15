@@ -84,7 +84,7 @@ fi
 }
 
 pg_alarm_remove_fr () {
-for i in `atq | awk '{ }'`;do atrm $i;done
+for i in `atq | awk '{print $1}'`;do atrm $i;done
 say "$(pg_jarvis-alarmremove_fr "alarm_remove")" 
 }
 
@@ -170,6 +170,6 @@ fi
 }
 
 pg_alarm_remove_en () {
-for i in `atq | awk '{ }'`;do atrm $i;done
+ for i in `atq | awk '{print $1}'`;do atrm $i;done
 say "$(pg_jarvis-alarmremove_en "alarm_remove")" 
 }
