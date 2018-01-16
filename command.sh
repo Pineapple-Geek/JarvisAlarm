@@ -1,10 +1,14 @@
-volume=1 
-MAX_VOLUME=75 #don't blow your eardrums 
-amixer sset PCM ${volume}% #set the volume low first 
-mpg321 plugins_installed/jarvis-alarm-test/audio/melodie.mp3 & #you could do random stuff to select from a directory too  
+#------------------------------------------
+#-- Volume Progressif Par PineApple-Geek --
+#------------------------------------------
+volume=10 #Volume Minimal souhaiter
+MAX_VOLUME=100 #Volume Maximal souhaiter
+amixer -c 1 set Master ${volume}% #Demarrage du volume au minimal 
+mpg321 melodie.mp3 & #Lancement de la musique  
 while [ "$volume" -lt "$MAX_VOLUME" ] ; do 
-   amixer sset PCM ${volume}% 
-   ((volume=$volume+1)) 
-   killall qiv #to keep the windows from stacking up  
-   sleep 10 # decide how long to sleep between volume increases 
+   amixer -c 1 set Master ${volume}% 
+   echo "$volume"
+   ((volume=$volume+5)) 
+   killall qiv #Commande pour empêcher les fenêtres de s'empiler  
+   sleep 1 # décider de combien de temps le processus va s'arreter entre les augmentations de volume
 done 
