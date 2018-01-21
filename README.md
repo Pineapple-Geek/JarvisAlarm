@@ -28,7 +28,7 @@ Launch control store in the file command.sh
 
 ```
 You: Supprimer alarme
-Jarvis: Toutes les alarme on bien était supprimer 
+Jarvis: Toutes les alarmes on bien était supprimer 
 
 ```
 Anglais:
