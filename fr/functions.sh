@@ -24,7 +24,7 @@ pg_jarvis-alarm_fr () {
 
 pg_jarvis-alarmremove_fr () {
     case "$1" in
-        alarm_remove) echo "Toutes les alarme on bien était supprimer";;
+        alarm_remove) echo "Toutes les alarmes on bien était supprimer";;
     esac
 } 
 
