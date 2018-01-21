@@ -24,7 +24,7 @@ Launch control store in the file command.sh
 
 ```
 
-## Supprimer toutes les alarme / Remove all Alarms:
+## Supprimer toutes les alarmes / Remove all Alarms:
 
 ```
 You: Supprimer alarme
