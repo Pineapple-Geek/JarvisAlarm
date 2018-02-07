@@ -1,2 +1,3 @@
 *ALARME POUR (*)H(*) (*)==pg_alarm_main_fr "(1)" "(2)" "(3)"
 *SUPPRIMER ALARME==pg_alarm_remove_fr
+*LISTE ALARME==pg_alarm_list_fr
