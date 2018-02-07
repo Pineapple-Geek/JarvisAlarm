@@ -89,7 +89,7 @@ say "$(pg_jarvis-alarmremove_fr "alarm_remove")"
 }
 
 pg_alarm_list_fr () {
-for i in `atq | awk '{print $1}'`;do say "$i";done
+atq | sort -k 1
 }
 
 # ---------------------------------------------------------------------------------------------------------
