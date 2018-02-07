@@ -27,3 +27,9 @@ pg_jarvis-alarmremove_en () {
         alarm_remove) echo "All the alarms we had was delete";;
     esac
 } 
+
+pg_jarvis-alarmlist_en () {
+    case "$1" in
+        alarm_list) echo "This is the list of active alarms:";;
+    esac
+} 
