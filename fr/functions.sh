@@ -28,3 +28,9 @@ pg_jarvis-alarmremove_fr () {
     esac
 } 
 
+pg_jarvis-alarmlist_fr () {
+    case "$1" in
+        alarm_list) echo "Voici la liste des alarmes active :";;
+    esac
+} 
+
