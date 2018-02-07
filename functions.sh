@@ -69,7 +69,7 @@ fi
 
 target=$1$2
 workFolder=$(readlink -f $(dirname $0))
-JarvisCommand="/plugins_installed/jarvis-alarm-test/command.sh"
+JarvisCommand="/plugins_installed/jarvis-alarm/command.sh"
 JarvisFolder=$workFolder$JarvisCommand
 
 if [ $DayTarget = $DayToday ]
@@ -97,6 +97,7 @@ say "$(pg_jarvis-alarmremove_fr "alarm_remove")"
 
 pg_alarm_main_en () {
 say "$(pg_jarvis-alarm_en "alarm_hours" "$1" "$2" "$3")" 
+
 DayTarget=$3
 DayToday="today"
 DayTomorrow="tomorrow"
@@ -156,7 +157,7 @@ fi
 
 target=$1$2
 workFolder=$(readlink -f $(dirname $0))
-JarvisCommand="/plugins_installed/jarvis-alarm-test/command.sh"
+JarvisCommand="/plugins_installed/jarvis-alarm/command.sh"
 JarvisFolder=$workFolder$JarvisCommand
 
 if [ $DayTarget = $DayToday ]
