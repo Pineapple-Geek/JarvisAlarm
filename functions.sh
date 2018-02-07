@@ -89,6 +89,7 @@ say "$(pg_jarvis-alarmremove_fr "alarm_remove")"
 }
 
 pg_alarm_list_fr () {
+say "$(pg_jarvis-alarmlist_fr "alarm_list")"
 atq | sort -k 1
 }
 
@@ -177,4 +178,9 @@ fi
 pg_alarm_remove_en () {
  for i in `atq | awk '{print $1}'`;do atrm $i;done
 say "$(pg_jarvis-alarmremove_en "alarm_remove")" 
+}
+
+pg_alarm_list_en () {
+say "$(pg_jarvis-alarmlist_en "alarm_list")"
+atq | sort -k 1
 }
